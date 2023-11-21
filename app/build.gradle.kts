@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "edu.utsa.cs3443.qcw519_lab5"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "edu.utsa.cs3443.qcw519_lab5"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
