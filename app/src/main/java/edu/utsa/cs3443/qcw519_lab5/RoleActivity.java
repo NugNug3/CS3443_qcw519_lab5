@@ -46,10 +46,11 @@ public class RoleActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View view) {
         if(view.getId() == R.id.act1) {
-
+            //left off here
+            launchAct1();
         }
         else if(view.getId() == R.id.act2) {
-
+            launchAct2();
         }
         else if(view.getId() == R.id.logout) {
             super.finish();

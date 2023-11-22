@@ -52,11 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    public void launchAct() {
-        Intent intent = new Intent(this, ActActivity.class);
-        startActivity(intent);
-    }
-
     public void setupButton(int id) {
         Button button = findViewById(id);
         button.setOnClickListener(this);
