@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -20,6 +21,9 @@ public class RoleActivity extends AppCompatActivity implements View.OnClickListe
     public static final String roleKey = "ROLE";
     public static final String bundle1 = "BUNDLE";
     public static final String realNameKey = "REALNAME";
+
+    public static final String act = "ACT";
+
     ArrayList<Role> role;
     String realName;
     @Override
@@ -46,13 +50,13 @@ public class RoleActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View view) {
         if(view.getId() == R.id.act1) {
-            //left off here
             launchAct1();
         }
         else if(view.getId() == R.id.act2) {
             launchAct2();
         }
         else if(view.getId() == R.id.logout) {
+            wipe(R.id.roles, role);
             super.finish();
         }
     }
@@ -77,5 +81,29 @@ public class RoleActivity extends AppCompatActivity implements View.OnClickListe
             val++;
         }
         textView.setText(finalString);
+    }
+
+    public void launchAct1() {
+        Intent intent = new Intent(this, ActActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(roleKey, (Serializable)role );
+        bundle.putInt(act, 1);
+        intent.putExtra(bundle1, bundle);
+        startActivity(intent);
+    }
+
+    public void launchAct2() {
+        Intent intent = new Intent(this, ActActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(roleKey, (Serializable)role );
+        bundle.putInt(act, 2);
+        intent.putExtra(bundle1, bundle);
+        startActivity(intent);
+    }
+
+    public void wipe(int buttonId, ArrayList<Role> role) {
+        TextView textView = findViewById(buttonId);
+        textView.setText("");
+        role.clear();
     }
 }

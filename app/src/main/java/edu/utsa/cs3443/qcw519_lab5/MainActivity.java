@@ -1,6 +1,8 @@
 package edu.utsa.cs3443.qcw519_lab5;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.utsa.cs3443.qcw519_lab5.model.Role;
 import edu.utsa.cs3443.qcw519_lab5.model.User;
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else {
             Toast.makeText(view.getContext(), "Incorrect username or passphrase", Toast.LENGTH_LONG).show();
         }
-        wipe(R.id.username, R.id.passphrase);
+        wipe(R.id.username, R.id.passphrase, userPass.getRole());
     }
 
     public void launchRole() {
@@ -67,10 +69,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return editText.getText().toString();
     }
 
-    public void wipe(int buttonId, int buttonId2) {
+    public void wipe(int buttonId, int buttonId2, ArrayList<Role> role) {
         EditText editText = findViewById(buttonId);
         EditText editText1 = findViewById(buttonId2);
         editText.getText().clear();
         editText1.getText().clear();
+        role.clear();
     }
 }

@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="107dp"
         android:textAlignment="center"
-        android:textSize="40sp">
+        android:textSize="20sp">
 
     </TextView>
 

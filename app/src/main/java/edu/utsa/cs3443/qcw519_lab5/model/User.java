@@ -49,7 +49,7 @@ public class User implements java.io.Serializable{
     }
 
     public boolean validate(String username, String passphrase) {
-        if(Objects.equals(getUsername(), username) /*&& Objects.equals(getPassword(), passphrase)*/) {
+        if(Objects.equals(getUsername(), username) && Objects.equals(getPassword(), passphrase)) {
             return true;
         }
         else {
