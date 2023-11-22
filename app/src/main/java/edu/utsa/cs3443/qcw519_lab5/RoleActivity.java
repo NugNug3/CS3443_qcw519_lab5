@@ -56,7 +56,6 @@ public class RoleActivity extends AppCompatActivity implements View.OnClickListe
             launchAct2();
         }
         else if(view.getId() == R.id.logout) {
-            wipe(R.id.roles, role);
             super.finish();
         }
     }
@@ -101,9 +100,4 @@ public class RoleActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    public void wipe(int buttonId, ArrayList<Role> role) {
-        TextView textView = findViewById(buttonId);
-        textView.setText("");
-        role.clear();
-    }
 }
